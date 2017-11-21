@@ -2,7 +2,7 @@
 var fitbitAccessToken;
 
 if (!window.location.hash) {
-    window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22CL2L&redirect_uri=https://mariawestling.github.io/DM2799-Mindfulness-Project/&scope=heartrate&expires_in=5000');
+    window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22CL2L&redirect_uri=https://mariawestling.github.io/DM2799-Mindfulness-Project/&scope=heartrate%20weight&expires_in=5000');
 } else {
     var fragmentQueryParameters = {};
     window.location.hash.slice(1).replace(
@@ -15,7 +15,7 @@ if (!window.location.hash) {
 
 // Make an API request and graph it
 var processResponse = function(res) {
-    console.log("Res:"+res);
+    console.log("Res:"+res.ok);
     if (!res.ok) {
         throw new Error('Fitbit API request failed: ' + res);
     }
