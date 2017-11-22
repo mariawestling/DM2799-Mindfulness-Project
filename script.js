@@ -11,6 +11,7 @@ if (!window.location.hash) {
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
+    update();
 }
 
 // Make an API request and graph it
@@ -63,27 +64,33 @@ var graphHeartRate = function(timeSeries) {
     chart.draw(data, options);
 }
 
-fetch(
-    'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
-    {
-        headers: new Headers({
-            'Authorization': 'Bearer ' + fitbitAccessToken
-        }),
-        mode: 'cors',
-        method: 'GET'
-    }
-).then(function(response){
-    return response.json();
-}).then(function(data) {
-    console.log(data);
-    heartRateArray = data['activities-heart-intraday'].dataset;
-    document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
-    document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
-;
 
-}).catch(function(error) {
-    console.log(error);
-});
+function update(){
+    fetch(
+        'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
+        {
+            headers: new Headers({
+                'Authorization': 'Bearer ' + fitbitAccessToken
+            }),
+            mode: 'cors',
+            method: 'GET'
+        }
+    ).then(function(response){
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        heartRateArray = data['activities-heart-intraday'].dataset;
+        document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
+        document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
+    ;
+
+    }).catch(function(error) {
+        console.log(error);
+    });
+
+    setTimeout(update, 5000);
+}
+
 
 
 
