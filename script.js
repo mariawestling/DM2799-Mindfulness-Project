@@ -15,7 +15,6 @@ if (!window.location.hash) {
 
 // Make an API request and graph it
 var processResponse = function(res) {
-    console.log("Res:"+res.ok);
     if (!res.ok) {
         throw new Error('Fitbit API request failed: ' + res);
     }
@@ -30,6 +29,7 @@ var processResponse = function(res) {
 }
 
 var processHeartRate = function(timeSeries) {
+    console.log(timeSeries['activities-heart-intraday'].dataset);
     return timeSeries['activities-heart-intraday'].dataset.map(
         function(measurement) {
             return [
