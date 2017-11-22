@@ -76,6 +76,9 @@ fetch(
     return response.json();
 }).then(function(data) {
     console.log(data);
+    document.getElementById("hr").innerHTML = data."activities-heart-intraday".dataset[0];
+;
+
 }).catch(function(error) {
     console.log(error);
 });
