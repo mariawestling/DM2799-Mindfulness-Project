@@ -2,7 +2,7 @@
 var fitbitAccessToken;
 
 if (!window.location.hash) {
-    window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22CL2L&redirect_uri=https://mariawestling.github.io/DM2799-Mindfulness-Project/&scope=weight&expires_in=5000');
+    window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22CG68&redirect_uri=https%3A%2F%2Fmariawestling.github.io%2FDM2799-Mindfulness-Project&scope=heartrate&expires_in=604800');
 } else {
     var fragmentQueryParameters = {};
     window.location.hash.slice(1).replace(
@@ -62,7 +62,7 @@ var graphHeartRate = function(timeSeries) {
 }
 
 fetch(
-    'https://api.fitbit.com/1/user/-/body/log/weight/date/{2017-11-15}.json',
+    'https://api.fitbit.com/1/user/-/profile.json',
     {
         headers: new Headers({
             'Authorization': 'Bearer ' + fitbitAccessToken
