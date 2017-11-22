@@ -24,8 +24,10 @@ var processResponse = function(res) {
     var contentType = res.headers.get('content-type')
     if (contentType && contentType.indexOf("application/json") !== -1) {
         console.log(res.json());
+        console.log("processResponse if");
         return res.json();
     } else {
+        console.log("processResponse else");
         throw new Error('JSON expected but received ' + contentType);
     }
 }
@@ -35,6 +37,7 @@ var processHeartRate = function(timeSeries) {
     console.log(timeSeries['activities-heart-intraday'].dataset);
     return timeSeries['activities-heart-intraday'].dataset.map(
         function(measurement) {
+            console.log("processHR");
             return [
                 measurement.time.split(':').map(
                     function(timeSegment) {
@@ -48,6 +51,7 @@ var processHeartRate = function(timeSeries) {
 }
 
 var graphHeartRate = function(timeSeries) {
+    console.log("graphHR");
     console.log(timeSeries);
     var data = new google.visualization.DataTable();
     data.addColumn('timeofday', 'Time of Day');
