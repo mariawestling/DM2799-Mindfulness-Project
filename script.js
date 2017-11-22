@@ -78,6 +78,7 @@ fetch(
     console.log(data);
     heartRateArray = data['activities-heart-intraday'].dataset;
     document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
+    document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
 ;
 
 }).catch(function(error) {
