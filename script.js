@@ -15,7 +15,8 @@ if (!window.location.hash) {
 
 // Make an API request and graph it
 var processResponse = function(res) {
-    console.log("RES"+res.Promise);
+    console.log("RES"+res.json().Promise);
+    console.log("RES"+res.json().PromiseStatus);
     if (!res.ok) {
         throw new Error('Fitbit API request failed: ' + res);
     }
