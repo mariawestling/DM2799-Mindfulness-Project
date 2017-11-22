@@ -88,7 +88,7 @@ function update(){
         console.log(error);
     });
 
-    setTimeout(update, 5000);
+    setTimeout(update, 10000);
 }
 
 
