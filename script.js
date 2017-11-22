@@ -15,8 +15,6 @@ if (!window.location.hash) {
 
 // Make an API request and graph it
 var processResponse = function(res) {
-    console.log("RES"+res.json().Promise);
-    console.log("RES"+res.json().PromiseStatus);
     if (!res.ok) {
         throw new Error('Fitbit API request failed: ' + res);
     }
@@ -33,8 +31,6 @@ var processResponse = function(res) {
 }
 
 var processHeartRate = function(timeSeries) {
-    console.log("TS");
-    console.log(timeSeries['activities-heart-intraday'].dataset);
     return timeSeries['activities-heart-intraday'].dataset.map(
         function(measurement) {
             console.log("processHR");
@@ -51,7 +47,6 @@ var processHeartRate = function(timeSeries) {
 }
 
 var graphHeartRate = function(timeSeries) {
-    console.log("graphHR");
     console.log(timeSeries);
     var data = new google.visualization.DataTable();
     data.addColumn('timeofday', 'Time of Day');
