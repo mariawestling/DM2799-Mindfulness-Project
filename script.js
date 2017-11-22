@@ -72,9 +72,28 @@ fetch(
         mode: 'cors',
         method: 'GET'
     }
-).then(processResponse)
-.then(processHeartRate)
-.then(graphHeartRate)
-.catch(function(error) {
+).then(function(response){
+    return response.json();
+}).then(function(data) {
+    console.log(data);
+}).catch(function(error) {
     console.log(error);
 });
+
+
+
+// fetch(
+//     'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
+//     {
+//         headers: new Headers({
+//             'Authorization': 'Bearer ' + fitbitAccessToken
+//         }),
+//         mode: 'cors',
+//         method: 'GET'
+//     }
+// ).then(processResponse)
+// .then(processHeartRate)
+// .then(graphHeartRate)
+// .catch(function(error) {
+//     console.log(error);
+// });
