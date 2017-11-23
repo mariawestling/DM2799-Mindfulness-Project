@@ -7,7 +7,7 @@
 <script>google.charts.load('current', {'packages':['line']});</script>
 </head>
 <body>
-	<h1>HEART RATE:</h1>
+	<h1 style="color:red">HEART RATE:</h1>
 	<h2 id="hr"></h3>
 	<h4 id="time"></h4>
     <div id="chart"></div>
@@ -34,11 +34,11 @@
 				var heartrate = parseInt(document.getElementById("time").innerHTML);
 				var speed = 1;
 				if (heartrate > 70){
-					speed = 0.2;
+					speed = 0.1;
 				}
 
-				cube.rotation.x += 0.01*speed;
-				cube.rotation.y += 0.01*speed;
+				cube.rotation.x += 0.05*speed;
+				cube.rotation.y += 0.05*speed;
 
 				renderer.render(scene, camera);
 			};
