@@ -22,7 +22,7 @@
 			document.body.appendChild( renderer.domElement );
 
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0xf36266 } );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
@@ -31,8 +31,14 @@
 			var animate = function () {
 				requestAnimationFrame( animate );
 
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
+				var heartrate = parseInt(document.getElementById("time").innerHTML);
+				var speed = 1;
+				if (heartrate > 70){
+					speed = 0.1;
+				}
+
+				cube.rotation.x += 0.001*speed;
+				cube.rotation.y += 0.001*speed;
 
 				renderer.render(scene, camera);
 			};
