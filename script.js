@@ -88,7 +88,7 @@ function update(){
         console.log(error);
     });
 
-    setTimeout(update, 120000);
+    setTimeout(update, 60000);
 }
 
 
