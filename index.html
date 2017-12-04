@@ -14,8 +14,7 @@
 	<h2 id="hr"></h3>
 	<h4 id="time"></h4>
     <div id="chart"></div>
-    <a href="treePage.html"> Start Session </a>
-    <a href="dataPage.html"> Start Session </a>
+    <div id="tree"> Start Session </div>
 	<script src="./script.js"></script>
     <!--######## SVG BODY ######### 
     
@@ -254,6 +253,12 @@
 	</svg> -->
 
     <script>
+
+    $(document).ready(function(){
+    	$("button").click(function(){
+    		$("#tree").hide();
+    	});
+    });
 	
 	// ############ SVG BODY W PARTS ############
 		// var bodyparts = ["face", "head", "throat", "upper", "rShoulder", "rArm", "rHand", "lShoulder", "lArm", "lHand", "tummy", "thighs", "rKnee", "lKnee", "rCalf", "lCalf", "rFoot", "lFoot"];
