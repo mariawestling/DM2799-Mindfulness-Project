@@ -67,7 +67,8 @@ var graphHeartRate = function(timeSeries) {
 
 function update(){
     fetch(
-        'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
+        //GET https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/00:00/00:01.json
+        'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec.json',
         {
             headers: new Headers({
                 'Authorization': 'Bearer ' + fitbitAccessToken
@@ -78,8 +79,11 @@ function update(){
     ).then(function(response){
         return response.json();
     }).then(function(data) {
-        console.log(data);
+        //console.log(data);
         heartRateArray = data['activities-heart-intraday'].dataset;
+        console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
+        console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
+        console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
         document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
         document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
     ;
@@ -88,7 +92,7 @@ function update(){
         console.log(error);
     });
 
-    setTimeout(update, 60000);
+    setTimeout(update, 30000);
 }
 
 
