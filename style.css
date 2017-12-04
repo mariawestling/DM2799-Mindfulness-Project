@@ -10,3 +10,7 @@
 .head1 {
 	fill: yellow;
 }
+
+.hidden {
+	display: none;
+}
