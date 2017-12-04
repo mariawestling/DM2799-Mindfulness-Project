@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <title>Fitbit Web API demo</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./script.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>-->
 
 
 </head>
 <body style="font-family:sans-serif">
-	<h1 style="color:black">HEART RATE:</h1>
-	<h2 id="hr"></h3>
-	<h4 id="time"></h4>
-    <div id="chart"></div>
-	<script src="./script.js"></script>
+	<div id="heartRateData">
+		<h1 style="color:black">HEART RATE:</h1>
+		<h2 id="hr"></h3>
+		<h4 id="time"></h4>
+	    <div id="chart"></div>
+	</div>
+    <button> Start Session </button>
+	
     <!--######## SVG BODY ######### 
     
     <script src="three.js"></script> -->
 
-<!--     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!--  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
 
 		<g id="face1">
@@ -109,7 +113,7 @@
 		</g>
 	</svg> -->
 
-	<!-- ######### TREE BRANCH ############ -->
+	<!-- ######### TREE BRANCH ############ 
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
 		<style type="text/css">
@@ -249,9 +253,15 @@
 				c-18,4.2-16.9,13.5-18.8,16c-3.7,5-4.9,11.3-7.8,18.2c-8.8,21.4-2,22.6,14,21.2c16.9-1.5,25.7-4.3,41.5-2.2
 				c16.1,2.1,23.5,21.5,26.5,27.8c4.4,9.2,2.3,10.8,8.2,41.5c5,26.1,10.5,31.2,13,35C296.3,357.7,298.2,357,299.2,355.8z"/>
 		</g>
-	</svg>
+	</svg> -->
 
     <script>
+
+    $(document).ready(function(){
+    	$("button").click(function(){
+    		$("#heartRateData").hide();
+    	});
+    });
 	
 	// ############ SVG BODY W PARTS ############
 		// var bodyparts = ["face", "head", "throat", "upper", "rShoulder", "rArm", "rHand", "lShoulder", "lArm", "lHand", "tummy", "thighs", "rKnee", "lKnee", "rCalf", "lCalf", "rFoot", "lFoot"];
