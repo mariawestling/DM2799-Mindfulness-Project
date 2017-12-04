@@ -16,8 +16,9 @@
 		<h2 id="hr"></h3>
 		<h4 id="time"></h4>
 	    <div id="chart"></div>
+	    <button> Start Session </button>
 	</div>
-    <button> Start Session </button>
+    
 
 	
     <!--######## SVG BODY ######### 
@@ -114,6 +115,7 @@
 		</g>
 	</svg> -->
 	<div id="tree" class="hidden">
+		<button> Home </button>
 	<!--######### TREE BRANCH ############ -->
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
@@ -263,6 +265,14 @@
     	$("button").click(function(){
     		$("#heartRateData").hide();
     		$("#tree").removeClass("hidden");
+    	});
+    });
+
+    $(document).ready(function(){
+    	$("button").click(function(){
+    		$("#tree").addClass("hidden");
+    		$("#heartRateData").show();
+    		
     	});
     });
 	
