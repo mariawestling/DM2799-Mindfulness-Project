@@ -14,3 +14,7 @@
 .hidden {
 	display: none;
 }
+
+#primary {
+	border-radius: 2px;
+}
