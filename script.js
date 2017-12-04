@@ -11,7 +11,7 @@ if (!window.location.hash) {
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
-    //update();
+    update();
 }
 
 // Make an API request and graph it
@@ -65,35 +65,35 @@ var graphHeartRate = function(timeSeries) {
 }
 
 
-//function update(){
-fetch(
-    //GET https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/00:00/00:01.json
-    'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec.json',
-    {
-        headers: new Headers({
-            'Authorization': 'Bearer ' + fitbitAccessToken
-        }),
-        mode: 'cors',
-        method: 'GET'
-    }
-).then(function(response){
-    return response.json();
-}).then(function(data) {
-    console.log(data);
-    heartRateArray = data['activities-heart-intraday'].dataset;
-    console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
-    console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
-    console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
-    document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
-    document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
-;
+function update(){
+    fetch(
+        //GET https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/00:00/00:01.json
+        'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec.json',
+        {
+            headers: new Headers({
+                'Authorization': 'Bearer ' + fitbitAccessToken
+            }),
+            mode: 'cors',
+            method: 'GET'
+        }
+    ).then(function(response){
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        heartRateArray = data['activities-heart-intraday'].dataset;
+        //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
+        //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
+        //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
+        document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
+        document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
+    ;
 
-}).catch(function(error) {
-    console.log(error);
-});
+    }).catch(function(error) {
+        console.log(error);
+    });
 
-    //setTimeout(update, 30000);
-//}
+    setTimeout(update, 30000);
+}
 
 
 
