@@ -79,7 +79,7 @@ function update(){
     ).then(function(response){
         return response.json();
     }).then(function(data) {
-        //console.log(data);
+        console.log(data);
         heartRateArray = data['activities-heart-intraday'].dataset;
         console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
@@ -92,7 +92,7 @@ function update(){
         console.log(error);
     });
 
-    setTimeout(update, 30000);
+    //setTimeout(update, 30000);
 }
 
 
