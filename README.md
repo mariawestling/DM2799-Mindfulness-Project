@@ -1,1 +1,1 @@
-# DM2799-Mindfulness-Projecthjehejehehek
+# DM2799-Mindfulness-Project
