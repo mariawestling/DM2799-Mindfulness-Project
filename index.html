@@ -324,10 +324,12 @@
 	}
 
 	function looper(){
-		setTimeout(function(){
-			speed++;
-			looper();
-		}, 4000);
+		speed ++;
+		setTimeout(looper(),4000);
+		// setTimeout(function(){
+		// 	speed++;
+		// 	looper();
+		// }, 4000);
 	}
 
 	// ############# SVG TREE #############
