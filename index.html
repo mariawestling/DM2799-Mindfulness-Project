@@ -29,7 +29,7 @@
     <!--######## SVG BODY fjsfjslfksj######### 
     
     <script src="three.js"></script> -->
-
+<!--
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
 
@@ -281,7 +281,7 @@
     		$("#heartRateData").show();
     		
     	});
-    });
+    });-->
 	
 	
 	<!--
@@ -308,7 +308,7 @@
 
 		// circulation(0);
 	</script>
-	<!--
+	
 	<div id="svg">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
@@ -457,8 +457,9 @@
 		var tl = new TimelineMax({
 		  repeat: -1
 		});
+		var speed = 5;
 
-		tl.set("g", {rotation: 5, transformOrigin: "center bottom", visibility:"visible", drawSVG:"100%" });
+		tl.set("g", {rotation: speed, transformOrigin: "center bottom", visibility:"visible", drawSVG:"100%" });
 
 		tl.to("g", 2, {drawSVG:true, yPercent: "0", rotation: -5, transformOrigin: "center bottom", smoothOrigin: true, ease: Power0.easeInOut})
 		   .to("g", 2, {yPercent: "0", rotation: 5, transformOrigin: "center bottom", smoothOrigin: true, ease: Power0.easeInOut});
