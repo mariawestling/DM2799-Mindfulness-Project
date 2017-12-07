@@ -310,11 +310,31 @@
 	</script>
 	
 	<script>
+
+	var HRlist = [65,69,70,73,76,77,72,71,68,64,60,65,70,73,78,80,81,86,87,82,78,74,70,65];
+	var HRindex = 0;
+	var coef = 0.5;
+	var speed = 0;
+	looper();
+
+	function monitor(){
+		speed = HRlist[HRindex]*coef;
+		HRindex++;
+		looper();
+	}
+
+	function looper(){
+		setTimeout(function(){
+			speed++;
+			looper();
+		}, 4000);
+	}
+
 	// ############# SVG TREE #############
 		var tl = new TimelineMax({
 		  repeat: -1
 		});
-		var speed = 5;
+		//var speed = 5;
 
 		tl.set("g", {rotation: speed, transformOrigin: "center bottom", visibility:"visible", drawSVG:"100%" });
 
