@@ -35,7 +35,7 @@
           <img src="movingBubbles.gif" width="400" height="300" />
         </video>
         <script>
-          let speedChangeBubble = (vid) => vid.playbackRate += 0.5;
+
         </script>
 		  </div> <!-- end normalBubbleView -->
 
@@ -48,8 +48,17 @@
           <img src="treeAni.gif" width="400" height="300" />
         </video>
         <script>
+
+          function speedUp(){
+            setTimeout(function() {
+              let speedChangeBubble = vid => vid.playbackRAte += 0.5;
+              speedUp();
+            }, 3000)
+          }
+
           let speedChange = (vid) => vid.playbackRate += 0.5;
 
+          speedUp();
         </script>
 
   		</div> <!-- end reverseBubbleView -->
