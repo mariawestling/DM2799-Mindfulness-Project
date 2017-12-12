@@ -51,7 +51,8 @@
 
           function speedUp(){
             setTimeout(function() {
-              let speedChangeBubble = () => document.getElementById("bubbleVideo").playbackRAte += 1;
+              document.getElementById("bubbleVideo").playbackRate += 0.5;
+              console.log("speedUp();")
               speedUp();
             }, 3000)
           }
