@@ -30,7 +30,7 @@
       <div class="col-md-2" id="bubbleView" style="display:none">
         <div id="goBackToMenu"> <h3>Menu</h3>
         </div>
-        <video  autoplay defaultMuted controls loop="loop">
+        <video id="bubbleVideo" onClick=speedChangeBubble(this) autoplay defaultMuted controls loop="loop">
           <source src="movingBubbles.mp4" type="video/mp4" controls ="true"/>
           <img src="movingBubbles.gif" width="400" height="300" />
         </video>
@@ -43,7 +43,7 @@
       <div class="col-md-2" id="treeView" style="display:none">
         <div id="goBackToMenu"> <h3>Menu</h3>
         </div>
-        <video autoplay defaultMuted loop="loop" width="400" height="700">
+        <video onClick=speedChange(this) autoplay defaultMuted loop="loop" width="400" height="700">
           <source src="treeAni.mp4" type="video/mp4" />
           <img src="treeAni.gif" width="400" height="300" />
         </video>
@@ -51,7 +51,7 @@
 
           function speedUp(){
             setTimeout(function() {
-              let speedChangeBubble = vid => vid.playbackRAte += 1;
+              let speedChangeBubble = () => document.getElementById("bubbleVideo").playbackRAte += 1;
               speedUp();
             }, 3000)
           }
