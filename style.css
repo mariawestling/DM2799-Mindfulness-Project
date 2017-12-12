@@ -1,5 +1,65 @@
-.bodypart {
-	fill: #E8F5E9;
+html { width: 100%; height: 100%;}
+body {
+	background: #eee;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	margin: 0;
+	padding:0;
+	width: 100%;
+	height: 100%;
+}
+
+#menuView {
+	margin-top: 40%;
+}
+
+#butts {
+	text-align: center;
+	position: flex;
+}
+
+h1 {
+	text-align: center;
+}
+.btn-primary {
+	background: #009688;
+	border-color: #00897B;
+	color: white;
+	width: 45%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin: 5%;
+
+}
+
+.btn-primary:active {
+	background: #00695C;
+}
+
+#goBackToMenu {
+	background-color: #455A64;
+	padding: 5%;
+	margin: 0;
+	color: white;
+	text-align: center;
+}
+
+h2, h3 {
+	margin: 0;
+}
+
+#bubbleView, #treeView, #smokeView {
+	padding:0;
+}
+
+video {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #455A64;
 }
 
 .current {
