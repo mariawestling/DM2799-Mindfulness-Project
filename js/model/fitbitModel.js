@@ -35,7 +35,7 @@ var FitbitModel = function() {
       //this.observerList[j].update();
     //}
     this.bubble.update();
-    //this.tree.update();
+    this.tree.update();
     this.smoke.update();
 
   }
