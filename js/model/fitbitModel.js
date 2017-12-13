@@ -27,10 +27,10 @@ var FitbitModel = function() {
 
   this.convertHeartRate = function() {
     for (var i = 0; i < meanValues.length; i++) {
-      sum += meanValues[i];
+      this.sum += meanValues[i];
     }
 
-    mean = sum/meanValues.length;
+    this.mean = sum/meanValues.length;
 
     if (first) {
       currHR = mean;
