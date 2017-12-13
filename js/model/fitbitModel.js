@@ -62,7 +62,7 @@ var FitbitModel = function() {
         for (var j = -15; j < 0; j++) {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
-        this.notifyObservers();
+
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
@@ -73,7 +73,8 @@ var FitbitModel = function() {
     }).catch(function(error) {
         console.log(error);
     });
-
+    
+    this.notifyObservers();
     setTimeout(this.updateHeartRate, 30000);
   }
 
