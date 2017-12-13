@@ -92,8 +92,4 @@ var FitbitModel = function() {
     this.updateHeartRate();
   }
 
-
-
-
-
 }
