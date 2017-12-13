@@ -47,23 +47,7 @@
           <source src="treeAni.mp4" type="video/mp4" />
           <img src="treeAni.gif" width="400" height="300" />
         </video>
-        <script>
-          // document.getElementById("bubbleVideo").playbackRate = 0.7;
-          console.log("start", document.getElementById("bubbleVideo").playbackRate);
-          // function speedUp(){
-          //   setTimeout(function() {
-          //
-          //     document.getElementById("bubbleVideo").playbackRate += 0.5;
-          //     console.log(document.getElementById("bubbleVideo").playbackRate);
-          //     console.log("speedUp();")
-          //     speedUp();
-          //   }, 30000)
-          // }
 
-          //let speedChange = (vid) => vid.playbackRate += 0.5;
-
-          // speedUp();
-        </script>
 
   		</div> <!-- end reverseBubbleView -->
 
@@ -71,7 +55,10 @@
       <div class="col-md-2" id="smokeView" style="display:none">
         <div id="goBackToMenu"> <h3>Menu</h3>
         </div>
-  			<h5>Normal tree goes here</h5>
+        <video autoplay defaultMuted loop="loop" controls>
+          <source src="smoke.mp4" type="video/mp4" />
+          <img src="smoke.gif" width="400" height="300" />
+        </video>
   		</div> <!-- end normalTreeView -->
 
     </div> <!-- end wrapper -->

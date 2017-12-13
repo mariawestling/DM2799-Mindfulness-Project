@@ -16,12 +16,15 @@ var FitbitModel = function() {
 
   this.addObserver = function(observer){
     console.log("observer", observer);
-    this.observerList = observer;
+    this.observerList.push(observer);
     console.log("list", this.observerList);
   }
 
   this.notifyObservers = function() {
-    this.observerList.update();
+    for (var j = 0; j < observerList.length; j++){
+      this.observerList[j].update();
+    }
+
   }
 
 
