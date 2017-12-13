@@ -7,7 +7,7 @@ var FitbitModel = function() {
   this.prevHR;
   this.first = true;
   this.meanValues;
-  this.sum;
+  this.sum = 0;
   this.mean;
   this.speed;
 
