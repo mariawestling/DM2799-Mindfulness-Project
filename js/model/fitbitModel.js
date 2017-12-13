@@ -12,7 +12,7 @@ var FitbitModel = function() {
     fitbitAccessToken = fragmentQueryParameters.access_token;
     setTimeout(function(){
       updateHeartRate();
-    }, 4000);    
+    }, 4000);
   }
 
   //declare variables
@@ -79,6 +79,13 @@ var FitbitModel = function() {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
         console.log("meanValues", meanValues);
+
+        for (var i = 0; i < 1; i++) {
+          console.log("notifyObserversForLoop");
+          console.log("observer forloop", this.observerList);
+          this.observerList.update();
+          console.log("observerList", observerList);
+        }
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
@@ -91,10 +98,7 @@ var FitbitModel = function() {
     });
     console.log("innan notifyObservers anrop");
     // this.notifyObservers;
-    for (var i = 0; i < 1; i++) {
-      console.log("notifyObserversForLoop");
-      this.observerList.update();
-    }
+
     setTimeout(this.updateHeartRate, 30000);
   }
 
