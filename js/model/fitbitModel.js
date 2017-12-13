@@ -10,9 +10,9 @@ var FitbitModel = function() {
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
-    this.updateHeartRate;
+    this.updateHeartRate();
   }
-  
+
   //declare variables
   this.currHR;
   this.prevHR;
