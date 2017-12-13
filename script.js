@@ -82,7 +82,10 @@ function update(){
         console.log(data);
         heartRateArray = data['activities-heart-intraday'].dataset;
         //var l = heartRateArray.slice(-15,0);
-        console.log(heartRateArray[-15].value);
+        for (var i = -15; i < 0; i++) {
+            console.log(heartRateArray[heartRateArray.length+i].value);
+        };
+       
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
