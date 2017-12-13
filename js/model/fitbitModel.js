@@ -27,27 +27,27 @@ var FitbitModel = function() {
 
   this.convertHeartRate = function() {
     for (var i = 0; i < meanValues.length; i++) {
-      this.sum += meanValues[i];
+      this.sum += this.meanValues[i];
     }
 
-    this.mean = sum/meanValues.length;
+    this.mean = this.sum/meanValues.length;
 
-    if (first) {
-      currHR = mean;
-      prevHR = mean
-      first = false;
+    if (this.first) {
+      this.currHR = this.mean;
+      this.prevHR = this.mean
+      this.first = false;
     } else {
-      prevHR = currHR;
-      currHR = mean;
+      this.prevHR = this.currHR;
+      this.currHR = this.mean;
     }
 
-    sum = 0;
+    this.sum = 0;
 
-    return (currHR-prevHR)/10
+    return (this.currHR-this.prevHR)/10
 
   }
   this.newData = function(newValues){
-    meanValues = newValues;
+    this.meanValues = newValues;
     this.notifyObservers();
   }
 
