@@ -2,4 +2,17 @@ var BubbleView = function(container, model) {
   this.container = container;
   this.goBackToMenu = container.find("#goBackToMenu");
   this.bubbleButton = container.find("#bubbleButton");
+  this.currHR;
+  this.prevHR;
+  this.newSpeed
+
+  model.addObserver(this);
+
+  this.update = function() {
+    newSpeed = model.convertHeartRate();
+    if (0.7 <= (document.getElementById("bubbleVideo").playbackRate + newSpeed) <= 2.3){
+      document.getElementById("bubbleVideo").playbackRate += newSpeed;
+    }
+  }
+
 }
