@@ -7,17 +7,15 @@ var ModelController = function(model) {
 
   if (!window.location.hash) {
     window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=22CG68&redirect_uri=https%3A%2F%2Fmariawestling.github.io%2FDM2799-Mindfulness-Project&scope=heartrate&expires_in=604800');
-    alert("1", window.location);
+
   } else {
     var fragmentQueryParameters = {};
-    alert("2", window.location.hash);
     window.location.hash.slice(1).replace(
       new RegExp("([^?=&]+)(=([^&]*))?", "g"),
       function($0, $1, $2, $3) {fragmentQueryParameters[$1] = $3;}
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
-    alert("outside");
     updateHeartRate();
   }
 
