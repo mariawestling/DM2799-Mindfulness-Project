@@ -12,7 +12,7 @@ var FitbitModel = function() {
   this.speed;
 
 
-  this.observerList;
+  this.observerList = [];
 
   this.addObserver = function(observer){
     console.log("observer", observer);

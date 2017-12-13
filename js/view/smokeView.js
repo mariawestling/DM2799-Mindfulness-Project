@@ -3,7 +3,7 @@ var SmokeView = function(container, model) {
   this.goBackToMenu = container.find("#goBackToMenu");
   this.smokeButton = container.find("#smokeButton");
   this.newSpeed;
-  
+
   model.addObserver(this);
 
   this.update = function() {
