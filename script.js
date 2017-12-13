@@ -81,7 +81,7 @@ function update(){
     }).then(function(data) {
         console.log(data);
         heartRateArray = data['activities-heart-intraday'].dataset;
-        console.log(heartRateArray.slice(3,1));
+        console.log("hr"+heartRateArray.slice(3,1));
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
