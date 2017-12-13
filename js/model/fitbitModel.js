@@ -53,7 +53,7 @@ var FitbitModel = function() {
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
-    updateHeartRate();
+    this.updateHeartRate();
   }
 
   this.updateHeartRate = function() {
