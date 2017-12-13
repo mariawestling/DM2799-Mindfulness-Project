@@ -60,7 +60,7 @@ var FitbitModel = function() {
         heartRateArray = data['activities-heart-intraday'].dataset;
         //meanValues = heartRateArray.slice(-15, -1);
         meanValues = [];
-        for (var j = -15; j < 0; i++) {
+        for (var j = -15; j < 0; j++) {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
         notifyObservers();
