@@ -1,6 +1,7 @@
 var ModelController = function(model) {
   this.fitbitAccessToken;
   this.heartRateArray;
+  this.meanValues;
 
 
 
