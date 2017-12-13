@@ -11,19 +11,32 @@ var FitbitModel = function() {
   this.mean = 0;
   this.speed;
 
+  this.bubble;
+  this.tree;
+  this.smoke;
 
   this.observerList = [];
 
-  this.addObserver = function(observer){
+  this.addObserver = function(observer, name){
+    if(name == "bubble"){
+      this.bubble = observer;
+    }else if(name == "tree"){
+      this.tree = observer;
+    }else if(name == "smoke"){
+      this.smoke = observer;
+    }
     console.log("observer", observer);
-    this.observerList.push(observer);
+    //this.observerList.push(observer);
     console.log("list", this.observerList);
   }
 
   this.notifyObservers = function() {
-    for (var j = 0; j < observerList.length; j++){
-      this.observerList[j].update();
-    }
+    //for (var j = 0; j < observerList.length; j++){
+      //this.observerList[j].update();
+    //}
+    this.bubble.update();
+    this.tree.update();
+    this.smoke.update();
 
   }
 
