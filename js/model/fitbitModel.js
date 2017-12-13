@@ -75,7 +75,7 @@ var FitbitModel = function() {
     });
     console.log("innan notifyObservers anrop");
     // this.notifyObservers;
-    for(var i = 0; i < 3; i++) {
+    for(var i = 0; i < 1; i++) {
       console.log("notifyObserversForLoop");
       this._observers[i].update();
     }
