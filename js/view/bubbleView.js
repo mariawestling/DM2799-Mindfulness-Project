@@ -8,7 +8,7 @@ var BubbleView = function(container, model) {
 
   console.log("THIS", this);
 
-  model.addObserver(this);
+  model.addObserver(this, "bubble");
   // function newPage(){
   //   setTimeout(function(){
   //     model.addObserver(this);

@@ -4,7 +4,7 @@ var SmokeView = function(container, model) {
   this.smokeButton = container.find("#smokeButton");
   this.newSpeed;
 
-  model.addObserver(this);
+  model.addObserver(this, "smoke");
 
   this.update = function() {
     newSpeed = model.convertHeartRate();

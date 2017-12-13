@@ -25,7 +25,7 @@ var FitbitModel = function() {
     }else if(name == "smoke"){
       this.smoke = observer;
     }
-    console.log("observer", observer);
+    console.log("observer", this.bubble);
     //this.observerList.push(observer);
     console.log("list", this.observerList);
   }
