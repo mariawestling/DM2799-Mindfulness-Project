@@ -12,12 +12,12 @@ var FitbitModel = function() {
 
 
 
-  this._observers = [];
+  this.observerList;
 
   this.addObserver = function(observer){
     console.log("observer", observer);
-    this._observers.push(observer);
-    console.log("list", this._observers);
+    this.observerList.push(observer);
+    console.log("list", this.observerList);
   }
 
   this.notifyObservers = function() {
@@ -62,7 +62,7 @@ var FitbitModel = function() {
         for (var j = -15; j < 0; j++) {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
-
+        console.log("meanValues", meanValues);
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
@@ -75,9 +75,9 @@ var FitbitModel = function() {
     });
     console.log("innan notifyObservers anrop");
     // this.notifyObservers;
-    for(var i = 0; i < 1; i++) {
+    for (var i = 0; i < 1; i++) {
       console.log("notifyObserversForLoop");
-      this._observers[i].update();
+      this.observerList[i].update();
     }
     setTimeout(this.updateHeartRate, 30000);
   }
