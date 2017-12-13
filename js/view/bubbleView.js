@@ -12,6 +12,7 @@ var BubbleView = function(container, model) {
     newSpeed = model.convertHeartRate();
     if (0.7 <= (document.getElementById("bubbleVideo").playbackRate + newSpeed) <= 2.3){
       document.getElementById("bubbleVideo").playbackRate += newSpeed;
+      console.log(document.getElementById("bubbleVideo").playbackRate += newSpeed);
     }
   }
 
