@@ -49,17 +49,17 @@
         </video>
         <script>
 
-          // function speedUp(){
-          //   setTimeout(function() {
-          //     document.getElementById("bubbleVideo").playbackRate += 0.5;
-          //     console.log("speedUp();")
-          //     speedUp();
-          //   }, 3000)
-          // }
+          function speedUp(){
+            setTimeout(function() {
+              document.getElementById("bubbleVideo").playbackRate += 0.5;
+              console.log("speedUp();")
+              speedUp();
+            }, 30000)
+          }
 
           //let speedChange = (vid) => vid.playbackRate += 0.5;
 
-          // speedUp();
+          speedUp();
         </script>
 
   		</div> <!-- end reverseBubbleView -->
