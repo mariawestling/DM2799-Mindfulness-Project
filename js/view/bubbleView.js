@@ -7,7 +7,14 @@ var BubbleView = function(container, model) {
   this.newSpeed;
 
   console.log("THIS", this);
-  model.addObserver(this);
+
+  this.newPage = function(){
+    setTimeout(function(){
+      model.addObserver(this);
+    }, 3000);
+
+  }
+
 
   this.update = function() {
     newSpeed = model.convertHeartRate();
