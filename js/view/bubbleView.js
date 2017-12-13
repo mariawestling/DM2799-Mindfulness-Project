@@ -4,8 +4,9 @@ var BubbleView = function(container, model) {
   this.bubbleButton = container.find("#bubbleButton");
   this.currHR;
   this.prevHR;
-  this.newSpeed
+  this.newSpeed;
 
+  console.log("THIS", this);
   model.addObserver(this);
 
   this.update = function() {

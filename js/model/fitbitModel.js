@@ -16,7 +16,7 @@ var FitbitModel = function() {
 
   this.addObserver = function(observer){
     console.log("observer", observer);
-    this.observerList.push(observer);
+    this.observerList = observer;
     console.log("list", this.observerList);
   }
 
@@ -77,7 +77,7 @@ var FitbitModel = function() {
     // this.notifyObservers;
     for (var i = 0; i < 1; i++) {
       console.log("notifyObserversForLoop");
-      this.observerList[i].update();
+      this.observerList.update();
     }
     setTimeout(this.updateHeartRate, 30000);
   }
