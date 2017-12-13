@@ -43,7 +43,7 @@ var ModelController = function(model) {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
         console.log("meanValues", meanValues);
-
+        model.newData(meanValues);
         // for (var i = 0; i < 1; i++) {
           // console.log("notifyObserversForLoop");
           // console.log("observer forloop", this.observerList);
@@ -60,7 +60,7 @@ var ModelController = function(model) {
     }).catch(function(error) {
         console.log(error);
     });
-    model.newData(meanValues);
+
     // console.log("innan notifyObservers anrop");
     // this.notifyObservers;
 
