@@ -10,7 +10,7 @@ var FitbitModel = function() {
     );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
-    this.updateHeartRate();
+    updateHeartRate();
   }
 
   //declare variables
@@ -55,7 +55,7 @@ var FitbitModel = function() {
 
   }
 
-  this.updateHeartRate = function() {
+  function updateHeartRate() {
     fetch(
         //GET https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/00:00/00:01.json
         'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec.json',
