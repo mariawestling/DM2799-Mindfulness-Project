@@ -12,7 +12,7 @@ var ModelController = function(model) {
     var fragmentQueryParameters = {};
     alert("else");
     window.location.hash.slice(1).replace(
-      new RegExp("([^?=&]+)(=([^&]*))?", "#"),
+      new RegExp("([^?=&]+)(=([^&]*))?", "g"),
       function($0, $1, $2, $3) {fragmentQueryParameters[$1] = $3;}
     );
 
