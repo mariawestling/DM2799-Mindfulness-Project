@@ -48,13 +48,13 @@ var ModelController = function(model) {
           // console.log("observer forloop", this.observerList);
           // //this.observerList.update();
           // console.log("observerList", observerList);
-        }
+        // }
         //console.log(heartRateArray[heartRateArray.length-10].value+" "+heartRateArray[heartRateArray.length-10].time);
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
         // document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
         // document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
-    ;
+    //;
 
     }).catch(function(error) {
         console.log(error);
