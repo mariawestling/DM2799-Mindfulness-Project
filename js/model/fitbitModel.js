@@ -15,6 +15,7 @@ var FitbitModel = function() {
   this.observerList = [];
 
   this.addObserver = function(observer){
+    console.log("observer", observer);
     this.observerList.push(observer);
   }
 
