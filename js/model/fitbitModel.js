@@ -75,7 +75,7 @@ var FitbitModel = function() {
         console.log(error);
     });
 
-    setTimeout(updateHeartRate, 30000);
+    setTimeout(this.updateHeartRate, 30000);
   }
 
 
