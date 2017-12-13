@@ -19,7 +19,9 @@ var FitbitModel = function() {
   }
 
   this.notifyObservers = function() {
+    console.log("notifyObservers");
     for(var i = 0; i < this.observerList.length; i++) {
+      console.log("notifyObserversForLoop");
       this.observerList[i].update();
     }
   }
