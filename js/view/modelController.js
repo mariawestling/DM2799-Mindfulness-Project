@@ -11,7 +11,10 @@ var ModelController = function(model) {
   } else {
     var fragmentQueryParameters = {};
     alert("else");
-    window.location.hash.slice(1).replace(/%23/g, '#');
+    window.location.hash.slice(1).replace(
+      new RegExp("([^?=&]+)(=([^&]*))?", "#"),
+      function($0, $1, $2, $3) {fragmentQueryParameters[$1] = $3;}
+    );
 
     fitbitAccessToken = fragmentQueryParameters.access_token;
     alert("outside");
