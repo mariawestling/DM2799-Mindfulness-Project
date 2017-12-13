@@ -20,10 +20,6 @@ var FitbitModel = function() {
 
   this.notifyObservers = function() {
     console.log("notifyObservers");
-    for(var i = 0; i < this.observerList.length; i++) {
-      console.log("notifyObserversForLoop");
-      this.observerList[i].update();
-    }
   }
 
 
@@ -76,7 +72,11 @@ var FitbitModel = function() {
         console.log(error);
     });
     console.log("innan notifyObservers anrop");
-    this.notifyObservers;
+    // this.notifyObservers;
+    for(var i = 0; i < this.observerList.length; i++) {
+      console.log("notifyObserversForLoop");
+      this.observerList[i].update();
+    }
     setTimeout(this.updateHeartRate, 30000);
   }
 
