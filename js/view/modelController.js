@@ -64,6 +64,9 @@ var ModelController = function(model) {
     // console.log("innan notifyObservers anrop");
     // this.notifyObservers;
 
-    setTimeout(updateHeartRate(), 30000);
+    // setTimeout(updateHeartRate(), 30000);
+    setTimeout(function(){
+      updateHeartRate();
+    }, 30000);
   }
 }
