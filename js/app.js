@@ -16,6 +16,6 @@ $(function() {
   var treeViewController = new TreeViewController(treeView, model, overallController);
   var smokeViewController = new SmokeViewController(smokeView, model, overallController);
 
-  var modelController = new ModelController(model);
+  var modelController = new ModelController(model, overallController);
 
 })
