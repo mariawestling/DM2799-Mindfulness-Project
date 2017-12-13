@@ -73,8 +73,8 @@ var FitbitModel = function() {
     }).catch(function(error) {
         console.log(error);
     });
-    
-    this.notifyObservers();
+
+    this.notifyObservers;
     setTimeout(this.updateHeartRate, 30000);
   }
 
