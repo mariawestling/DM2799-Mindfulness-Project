@@ -58,6 +58,11 @@ var FitbitModel = function() {
 
   }
 
+  function updateView(this.newSpeed) {
+    this.bubble.update(this.newSpeed);
+    this.tree.update(this.newSpeed);
+    this.smoke.update(this.newSpeed);
+  }
 
   this.convertHeartRate = function() {
     // for (var i = 0; i < meanValues.length; i++) {
@@ -81,9 +86,7 @@ var FitbitModel = function() {
     this.newSpeed = this.speed / 5;
     console.log("small speed", this.newSpeed);
     setTimeout(function() {
-      this.bubble.update(this.newSpeed);
-      this.tree.update(this.newSpeed);
-      this.smoke.update(this.newSpeed);
+      updateViews(this.newSpeed);
       console.log("timeout");
     }, 5000);
 
