@@ -43,6 +43,7 @@ var ModelController = function(model) {
           meanValues.push(heartRateArray[heartRateArray.length+j].value);
         }
         console.log("meanValues", meanValues);
+        console.log(heartRateArray[heartRateArray.length-1].time);
         model.newData(meanValues);
         // for (var i = 0; i < 1; i++) {
           // console.log("notifyObserversForLoop");
@@ -54,7 +55,7 @@ var ModelController = function(model) {
         //console.log(heartRateArray[heartRateArray.length-2].value+" "+heartRateArray[heartRateArray.length-2].time);
         //console.log(heartRateArray[heartRateArray.length-1].value+" "+heartRateArray[heartRateArray.length-1].time);
         // document.getElementById("hr").innerHTML = heartRateArray[heartRateArray.length-1].value;
-        // document.getElementById("time").innerHTML = heartRateArray[heartRateArray.length-1].time;
+        // document.getElementById("time").innerHTML =
     //;
 
     }).catch(function(error) {
