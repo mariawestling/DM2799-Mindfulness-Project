@@ -7,6 +7,8 @@ var TreeView = function(container, model) {
 
   model.addObserver(this, "tree");
 
+  document.getElementById("bubbleVideo").playbackRate += 0.5;
+  
   this.update = function() {
     this.newSpeed = model.convertHeartRate();
     this.currentSpeed = document.getElementById("bubbleVideo").playbackRate;
