@@ -58,7 +58,7 @@ var FitbitModel = function() {
 
   }
 
-  function updateView(newSpeed) {
+  function updateViews(newSpeed) {
     this.bubble.update(newSpeed);
     this.tree.update(newSpeed);
     this.smoke.update(newSpeed);
