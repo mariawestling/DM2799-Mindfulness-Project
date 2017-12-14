@@ -40,21 +40,41 @@ var FitbitModel = function() {
 
   }
 
+  this.getMedian = function(meanValues) {
+    meanValues.sort(function(a, b) {
+      return a-b;
+    });
 
-  this.convertHeartRate = function() {
-    for (var i = 0; i < meanValues.length; i++) {
-      this.sum += this.meanValues[i];
+    if (meanValues.length === 0) {
+      return 0;
     }
 
-    this.mean = this.sum/meanValues.length;
+    var half = Math.floor(meanValues.length/2);
+
+    if (meanValues.length % 2){
+      return meanValues[half];
+    } else {
+      return (meanValues[half-1] + meanValues[half]) / 2.0;
+    }
+
+  }
+
+
+  this.convertHeartRate = function() {
+    // for (var i = 0; i < meanValues.length; i++) {
+    //   this.sum += this.meanValues[i];
+    // }
+    this.median  = this.getMedian(meanValues);
+    console.log("median", this.median);
+    // this.mean = this.sum/meanValues.length;
 
     if (this.first) {
-      this.currHR = this.mean;
-      this.prevHR = this.mean
+      this.currHR = this.median;
+      this.prevHR = this.median
       this.first = false;
     } else {
       this.prevHR = this.currHR;
-      this.currHR = this.mean;
+      this.currHR = this.median;
     }
 
     this.sum = 0;
