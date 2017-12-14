@@ -7,7 +7,7 @@ var TreeView = function(container, model) {
 
   model.addObserver(this, "tree");
 
-  document.getElementById("treeVideo").playbackRate += 1.0;
+  document.getElementById("treeVideo").playbackRate += 0.5;
 
   this.update = function(newSpeed) {
     // this.newSpeed = model.convertHeartRate();

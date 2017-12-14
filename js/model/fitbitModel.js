@@ -27,21 +27,16 @@ var FitbitModel = function() {
     }else if(name == "smoke"){
       this.smoke = observer;
     }
-    console.log("observer bubble", this.bubble);
+    // console.log("observer bubble", this.bubble);
     //this.observerList.push(observer);
-    console.log("list", this.observerList);
+    // console.log("list", this.observerList);
   }
 
   this.notifyObservers = function() {
     //for (var j = 0; j < observerList.length; j++){
       //this.observerList[j].update();
     //}
-
-    this.newSpeed = this.convertHeartRate();
-    this.bubble.update(this.newSpeed);
-    this.tree.update(this.newSpeed);
-    this.smoke.update(this.newSpeed);
-
+    this.convertHeartRate();
   }
 
   this.getMedian = function(meanValues) {
@@ -69,9 +64,8 @@ var FitbitModel = function() {
     //   this.sum += this.meanValues[i];
     // }
     this.median  = this.getMedian(meanValues);
-    console.log("median", this.median);
+     console.log("median", this.median);
     // this.mean = this.sum/meanValues.length;
-
     if (this.first) {
       this.currHR = this.median;
       this.prevHR = this.median
@@ -83,17 +77,25 @@ var FitbitModel = function() {
 
     this.sum = 0;
 
-    return (this.currHR-this.prevHR)/10
+    this.speed = (this.currHR-this.prevHR)/10;
+    this.newSpeed = this.speed / 5;
+    console.log("small speed", this.newSpeed);
+    setTimeout(function() {
+      this.bubble.update(this.newSpeed);
+      this.tree.update(this.newSpeed);
+      this.smoke.update(this.newSpeed);
+      console.log("timeout");
+    }, 5000);
+
+
+    // return (this.currHR-this.prevHR)/10
 
   }
+
+
   this.newData = function(newValues){
     this.meanValues = newValues;
     this.notifyObservers();
   }
-
-
-
-
-
 
 }
