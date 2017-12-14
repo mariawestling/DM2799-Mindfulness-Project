@@ -6,7 +6,7 @@ var BubbleView = function(container, model) {
 
   model.addObserver(this, "bubble");
 
-  document.getElementById("bubbleVideo").playbackRate += 0.5;
+  document.getElementById("bubbleVideo").playbackRate += 1.0;
 
   this.update = function(newSpeed) {
     // this.newSpeed = model.convertHeartRate();
@@ -14,9 +14,9 @@ var BubbleView = function(container, model) {
     this.currentSpeed = document.getElementById("bubbleVideo").playbackRate;
     console.log(this.currentSpeed + newSpeed);
     // console.log(document.getElementById("bubbleVideo").playbackRate);
-    if (0.7 <= (this.currentSpeed + newSpeed) && (this.currentSpeed + newSpeed) <= 2.3){
+    // if (0.7 <= (this.currentSpeed + newSpeed) && (this.currentSpeed + newSpeed) <= 2.3){
       document.getElementById("bubbleVideo").playbackRate += newSpeed;
       console.log(document.getElementById("bubbleVideo").playbackRate);
-    }
+    // }
   }
 }
