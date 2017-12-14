@@ -6,8 +6,8 @@ var SmokeView = function(container, model) {
   this.currentSpeed;
 
   model.addObserver(this, "smoke");
-  
-  document.getElementById("bubbleVideo").playbackRate += 0.5;
+
+  document.getElementById("smokeVideo").playbackRate += 0.5;
 
   this.update = function() {
     this.newSpeed = model.convertHeartRate();
