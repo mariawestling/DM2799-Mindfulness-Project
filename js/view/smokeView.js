@@ -11,12 +11,12 @@ var SmokeView = function(container, model) {
 
   this.update = function(newSpeed) {
     // this.newSpeed = model.convertHeartRate();
-    console.log("smoke new speed", newSpeed);
+    // console.log("smoke new speed", newSpeed);
     this.currentSpeed = document.getElementById("smokeVideo").playbackRate;
-    console.log(this.currentSpeed + newSpeed);
+    // console.log(this.currentSpeed + newSpeed);
     // if (0.7 <= (this.currentSpeed + newSpeed) && (this.currentSpeed + newSpeed) <= 2.3){
       document.getElementById("smokeVideo").playbackRate += newSpeed;
-      console.log(document.getElementById("smokeVideo").playbackRate);
+      // console.log(document.getElementById("smokeVideo").playbackRate);
     // }
   }
 }

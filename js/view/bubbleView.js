@@ -5,6 +5,7 @@ var BubbleView = function(container, model) {
   this.currentSpeed;
 
   model.addObserver(this, "bubble");
+  console.log("HEJ");
 
   document.getElementById("bubbleVideo").playbackRate += 1.0;
 

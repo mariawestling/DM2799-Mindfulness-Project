@@ -12,11 +12,11 @@ var TreeView = function(container, model) {
   this.update = function(newSpeed) {
     // this.newSpeed = model.convertHeartRate();
     this.currentSpeed = document.getElementById("treeVideo").playbackRate;
-    console.log(this.currentSpeed + newSpeed);
+    // console.log(this.currentSpeed + newSpeed);
     // console.log(document.getElementById("bubbleVideo").playbackRate);
     // if (0.7 <= (this.currentSpeed + newSpeed) && (this.currentSpeed + newSpeed) <= 2.3){
       document.getElementById("treeVideo").playbackRate += newSpeed;
-      console.log(document.getElementById("treeVideo").playbackRate);
+      // console.log(document.getElementById("treeVideo").playbackRate);
     // }
   }
 }
