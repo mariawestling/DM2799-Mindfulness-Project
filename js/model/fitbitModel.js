@@ -58,10 +58,10 @@ var FitbitModel = function() {
 
   }
 
-  function updateView(this.newSpeed) {
-    this.bubble.update(this.newSpeed);
-    this.tree.update(this.newSpeed);
-    this.smoke.update(this.newSpeed);
+  function updateView(newSpeed) {
+    this.bubble.update(newSpeed);
+    this.tree.update(newSpeed);
+    this.smoke.update(newSpeed);
   }
 
   this.convertHeartRate = function() {
