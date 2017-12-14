@@ -11,6 +11,7 @@ var BubbleView = function(container, model) {
 
   this.update = function() {
     this.newSpeed = model.convertHeartRate();
+    console.log("bubble new speed", this.newSpeed);
     this.currentSpeed = document.getElementById("bubbleVideo").playbackRate;
     // console.log(document.getElementById("bubbleVideo").playbackRate);
     if (0.7 <= (this.currentSpeed + this.newSpeed) <= 2.3){
