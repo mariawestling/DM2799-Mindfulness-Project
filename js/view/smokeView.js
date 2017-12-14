@@ -12,7 +12,7 @@ var SmokeView = function(container, model) {
     this.currentSpeed = document.getElementById("bubbleVideo").playbackRate;
     // console.log(document.getElementById("bubbleVideo").playbackRate);
     if (0.7 <= (this.currentSpeed + this.newSpeed) <= 2.3){
-      document.getElementById("bubbleVideo").playbackRate += newSpeed;
+      document.getElementById("bubbleVideo").playbackRate += this.newSpeed;
       console.log(document.getElementById("bubbleVideo").playbackRate);
     }
   }
