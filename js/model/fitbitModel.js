@@ -15,6 +15,8 @@ var FitbitModel = function() {
   this.tree;
   this.smoke;
 
+  this.newSpeed;
+
   this.observerList = [];
 
   this.addObserver = function(observer, name){
@@ -34,9 +36,11 @@ var FitbitModel = function() {
     //for (var j = 0; j < observerList.length; j++){
       //this.observerList[j].update();
     //}
-    this.bubble.update();
-    this.tree.update();
-    this.smoke.update();
+
+    this.newSpeed = model.convertHeartRate();
+    this.bubble.update(this.newSpeed);
+    this.tree.update(this.newSpeed);
+    this.smoke.update(this.newSpeed);
 
   }
 
