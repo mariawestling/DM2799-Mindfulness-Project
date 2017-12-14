@@ -37,7 +37,7 @@ var FitbitModel = function() {
       //this.observerList[j].update();
     //}
 
-    this.newSpeed = model.convertHeartRate();
+    this.newSpeed = convertHeartRate();
     this.bubble.update(this.newSpeed);
     this.tree.update(this.newSpeed);
     this.smoke.update(this.newSpeed);
